@@ -34,11 +34,6 @@ jobs:
           esac
 
           case "${{ matrix.runner }}" in
-            ubuntu-latest)
-              echo "OS=linux" >> "$GITHUB_OUTPUT"
-              echo "ARCH=x86_64" >> "$GITHUB_OUTPUT"
-              echo "CMD=bin/spc-alpine-docker" >> "$GITHUB_OUTPUT"
-              ;;
             ubuntu-24.04-arm)
               echo "OS=linux" >> "$GITHUB_OUTPUT"
               echo "ARCH=aarch64" >> "$GITHUB_OUTPUT"
@@ -54,29 +49,7 @@ jobs:
               echo "ARCH=aarch64" >> "$GITHUB_OUTPUT"
               echo CMD="bin/spc-gnu-docker" >> "$GITHUB_OUTPUT"
               ;;
-            windows-2019)
-              echo "OS=windows" >> "$GITHUB_OUTPUT"
-              echo "ARCH=x86_64" >> "$GITHUB_OUTPUT"
-              echo "CMD=bin/spc" >> "$GITHUB_OUTPUT"
-              ;;
-            macos-15-intel)
-              echo "OS=macos" >> "$GITHUB_OUTPUT"
-              echo "ARCH=x86_64" >> "$GITHUB_OUTPUT"
-              echo "CMD=bin/spc" >> "$GITHUB_OUTPUT"
-              ;;
-            macos-15)
-              echo "OS=macos" >> "$GITHUB_OUTPUT"
-              echo "ARCH=aarch64" >> "$GITHUB_OUTPUT"
-              echo "CMD=bin/spc" >> "$GITHUB_OUTPUT"
-              ;;
           esac
-
-      - name: "Checkout remote"
-        if: github.repository != 'crazywhalecc/static-php-cli'
-        uses: actions/checkout@v4
-        with:
-          repository: crazywhalecc/static-php-cli
-          ref: main
 
       - name: "Setup PHP"
         if: ${{ !startsWith(matrix.runner, 'ubuntu') }}
