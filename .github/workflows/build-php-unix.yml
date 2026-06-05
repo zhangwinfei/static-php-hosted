@@ -32,7 +32,7 @@ jobs:
               echo "EXTENSIONS=iconv,pcntl,posix,mbstring,filter,tokenizer,phar" >> "$GITHUB_OUTPUT"
               ;;
             custom)
-              echo "EXTENSIONS=apcu, bcmath, bz2, calendar, Core, ctype, curl, date, dba, dom, event, exif, fileinfo, filter, ftp, gd, gmp, hash, iconv, imagick, imap, intl, json, libxml, mbstring, mysqli, mysqlnd, openssl, pcntl, pcre, PDO, pdo_mysql, pgsql, Phar, posix, protobuf, readline, redis, Reflection, session, shmop, SimpleXML, soap, sockets, sodium, SPL, sqlite3, standard, swoole, sysvmsg, sysvsem, sysvshm, tokenizer, xml, xmlreader, xmlwriter, xsl, Zend OPcache, zip, zlib" >> "$GITHUB_OUTPUT"
+              echo "EXTENSIONS=apcu,bcmath,bz2,calendar,Core,ctype,curl,date,dba,dom,event,exif,fileinfo,filter,ftp,gd,gmp,hash,iconv,imagick,imap,intl,json,libxml,mbstring,mysqli,mysqlnd,openssl,pcntl,pcre,PDO,pdo_mysql,pgsql,Phar,posix,protobuf,readline,redis,Reflection,session,shmop,SimpleXML,soap,sockets,sodium,SPL,sqlite3,standard,swoole,sysvmsg,sysvsem,sysvshm,tokenizer,xml,xmlreader,xmlwriter,xsl,ZendOPcache,zip,zlib" >> "$GITHUB_OUTPUT"
               echo "SUGGEST=--with-suggested-libs" >> "$GITHUB_OUTPUT"
               ;;
             common)
