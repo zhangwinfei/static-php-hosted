@@ -1,4 +1,4 @@
-name: Build Self-Hosted PHP Binary (Unix)
+name: 自定义扩展打包
 
 on:
   workflow_dispatch:
