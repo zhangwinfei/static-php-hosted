@@ -51,6 +51,13 @@ jobs:
               ;;
           esac
 
+      - name: "Checkout remote"
+        if: github.repository != 'crazywhalecc/static-php-cli'
+        uses: actions/checkout@v4
+        with:
+          repository: crazywhalecc/static-php-cli
+          ref: main
+
       - name: "Setup PHP"
         if: ${{ !startsWith(matrix.runner, 'ubuntu') }}
         uses: shivammathur/setup-php@v2
